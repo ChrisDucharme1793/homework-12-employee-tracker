@@ -15,7 +15,7 @@ connection.connect(function(err){
 connection.query = util.promisify(connection.query)
 
 module.exports = {
-    findAllDepartments: function(){
+    findAllDepartment: function(){
         return connection.query('SELECT * FROM department')
     },
     findAllEmployees: function (){
@@ -42,7 +42,7 @@ module.exports = {
     removeDepartment: function(data){
         return connection.query('DELETE FROM department WHERE id = ?', ID)
     },
-    findAllEmployeesByDepartments: function(ID){
+    findAllEmployeesByDepartment: function(ID){
         return connection.query(`SELECT employee.first_name, employee.last_name, 
         role.title, department.name AS department FROM employee 
         LEFT JOIN role ON employee.role_id = role.id
