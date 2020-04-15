@@ -127,7 +127,7 @@ async function viewEmployees() {
 async function viewEmployeesByDepartment() {
     const departments = await db.findAllDepartments();
     const departmentChoices = departments.map(({ id, name }) => ({
-        name: name,
+        name: `${name}`,
         value: id
     }));
 
