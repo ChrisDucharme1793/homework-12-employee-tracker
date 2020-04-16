@@ -15,7 +15,7 @@ connection.connect(function(err){
 connection.query = util.promisify(connection.query)
 
 module.exports = {
-    findAllDepartment: function(){
+    findAllDepartments: function(){
         return connection.query('SELECT * FROM department')
     },
     findAllEmployees: function (){
